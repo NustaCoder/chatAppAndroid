@@ -1,19 +1,16 @@
 package com.example.chatapplication.Model;
 
 public class User {
-    private String username = "q";
-    private String id = "s";
-    private String imageUrl = "s";
+    private String username ="default";
+    private String userid ="default";
+    private String imageURL ="default";
 
-    public User(String id, String username, String imageUrl){
-        this.id = id;
+    public User(String userid, String username, String imageURL){
+        this.userid = userid;
         this.username = username;
-        this.imageUrl = imageUrl;
+        this.imageURL = imageURL;
     }
     public User(){
-        username = "inclass";
-        id = "inclass";
-        imageUrl = "inclass";
     }
 
     public String getUsername() {
@@ -24,19 +21,19 @@ public class User {
         this.username = username;
     }
 
-    public String getId() {
-        return id;
+    public String getUserid() {
+        return userid;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImageURL() {
+        return imageURL;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 }

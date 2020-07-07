@@ -1,6 +1,7 @@
 package com.example.chatapplication.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.chatapplication.ChatActivity;
 import com.example.chatapplication.Model.User;
 import com.example.chatapplication.R;
 
@@ -36,9 +38,18 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        User user = mUsers.get(position);
+        final User user = mUsers.get(position);
         holder.username.setText(user.getUsername());
         holder.profile_image.setImageResource(R.mipmap.ic_launcher);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, ChatActivity.class);
+                intent.putExtra("uid", user.getUserid());
+                mContext.startActivity(intent);
+            }
+        });
 
     }
 
@@ -54,9 +65,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
        public ViewHolder(View itemView){
            super(itemView);
+
            username = itemView.findViewById(R.id.username);
            profile_image = itemView.findViewById(R.id.profile_image);
-
        }
     }
 }

@@ -72,7 +72,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 if (task.isSuccessful()){
                     FirebaseUser firebaseUser = auth.getCurrentUser();
                     assert firebaseUser != null;
-                    String userId = firebaseUser.getUid();
+                    final String userId = firebaseUser.getUid();
 
                     reference = FirebaseDatabase.getInstance().getReference("user").child(userId);
 

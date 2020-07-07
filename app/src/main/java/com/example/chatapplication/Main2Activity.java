@@ -41,6 +41,7 @@ public class Main2Activity extends AppCompatActivity {
     FirebaseUser firebaseUser;
     DatabaseReference reference;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +65,8 @@ public class Main2Activity extends AppCompatActivity {
 
         viewPagerAdapter.addFragment(new ChatFragment(),"Chats");
         viewPagerAdapter.addFragment(new UsersFragment(),"Users");
+
+
 
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
